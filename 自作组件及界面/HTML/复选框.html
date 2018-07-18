@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>复选框</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="checkbox" v-model="checked" value="html" id="html">
+		<label for="html">HTML</label>
+		<br>
+		<input type="checkbox" v-model="checked" value="js" id="js">
+		<label for="js">JavaScript</label>
+		<br>
+		<input type="checkbox" v-model="checked" value="css" id="css">
+		<label for="css">CSS</label>
+		<br>
+		<p>选择的项是：{{ checked}}</p>
+	</div>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',
+			data: {
+				checked: ['html','css']
+			}
+		})
+	</script>
+</body>
+</html>

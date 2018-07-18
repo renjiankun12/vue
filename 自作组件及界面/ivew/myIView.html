@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iview example</title>
+    <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+    <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- <i-switch size="large"></i-switch> -->
+    <i-button type="primary" @click="show">Click me!</i-button>
+    <Modal v-model="modal6" title="Welcome" :loading="loading" @on-ok="asyncOK">欢迎光临任建堃的小窝</Modal>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            modal6: false,
+            loading: true,
+
+        },
+        methods: {
+            show: function () {
+                this.modal6 = true;
+            },
+             asyncOK () {
+                setTimeout(() => {
+                    this.modal6 = false;
+                }, 2000);
+                
+            }
+        }
+    })
+  </script>
+</body>
+</html>

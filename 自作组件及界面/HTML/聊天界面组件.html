@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>1</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<my-component></my-component>
+		<my-component></my-component>
+		<my-component></my-component>
+	</div>
+	<script type="text/javascript">
+		Vue.component('my-component', {
+			template: '<button @click="if(counter<9){counter++}else{counter=0}">{{ counter }}</button>',
+			data: function(){
+				return {
+					counter: 0
+				}
+			}	
+		});
+		var app = new Vue({
+			el: '#app'
+		})
+	</script>
+</body>
+</html>
